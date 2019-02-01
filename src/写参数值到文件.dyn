@@ -1,0 +1,63 @@
+<Workspace Version="0.9.1.4062" X="-266.488764450045" Y="-232.391691437198" zoom="1.50237217924567" Name="Home" Description="" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap />
+  <Elements>
+    <Dynamo.Nodes.DSModelElementsSelection guid="9165ca5c-59bc-4457-a282-d26dd686f719" type="Dynamo.Nodes.DSModelElementsSelection" nickname="Select Model Elements" x="292.532499591516" y="258.256547586628" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <instance id="4b4f06eb-e357-4726-8b8f-de598bf16da9-000daa71" />
+      <instance id="4b4f06eb-e357-4726-8b8f-de598bf16da9-000daaa4" />
+      <instance id="4b4f06eb-e357-4726-8b8f-de598bf16da9-000daad4" />
+      <instance id="4b4f06eb-e357-4726-8b8f-de598bf16da9-000dab1b" />
+      <instance id="4b4f06eb-e357-4726-8b8f-de598bf16da9-000dab4d" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbbce" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbbd0" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbbd2" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbbd4" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbbd6" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbc13" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbc15" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbc17" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbc19" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbc1b" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbc54" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbc56" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbc58" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbc5a" />
+      <instance id="2c869681-cf78-4a9b-a876-ddb8f951f0cd-000dbc5c" />
+    </Dynamo.Nodes.DSModelElementsSelection>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="217499e9-49e3-4c56-aa56-a84dbe0007d6" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Element.GetParameterValueByName" x="710" y="264.5" isVisible="true" isUpstreamVisible="true" lacing="CrossProduct" isSelectedInput="False" IsFrozen="false" assembly="RevitNodes.dll" function="Revit.Elements.Element.GetParameterValueByName@string" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="02350f8b-6881-4e7a-8556-a8e457f52061" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="259" y="519" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="{&quot;区域&quot;,&quot;监测类型&quot;,&quot;监测对象&quot;,&quot;构件编码&quot;};" ShouldFocus="false" />
+    <PythonNodeModels.PythonNode guid="afcca774-f065-437a-a672-98ba12d1cab1" type="PythonNodeModels.PythonNode" nickname="Python Script" x="1076.12612417332" y="269.945818099829" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" inputcount="1">
+      <Script>import clr
+clr.AddReference('ProtoGeometry')
+from Autodesk.DesignScript.Geometry import *
+#该节点的输入内容将存储为 IN 变量中的一个列表。
+
+#若要导入第三方库，需下面两行代码
+import sys
+sys.path.append(r'C:\Program Files (x86)\IronPython 2.7\Lib')
+
+import codecs
+dataEnteringNode = IN
+
+with codecs.open(r'C:\Users\Administrator\Desktop\新建文件夹\00.txt', 'w', 'utf-8') as f:
+    for linedata in IN[0]:
+        line = '\t'.join(linedata)
+        f.write(line)
+        f.write('\n')
+
+
+#将输出内容指定给 OUT 变量。
+OUT = 0</Script>
+    </PythonNodeModels.PythonNode>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="9165ca5c-59bc-4457-a282-d26dd686f719" start_index="0" end="217499e9-49e3-4c56-aa56-a84dbe0007d6" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="217499e9-49e3-4c56-aa56-a84dbe0007d6" start_index="0" end="afcca774-f065-437a-a672-98ba12d1cab1" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="02350f8b-6881-4e7a-8556-a8e457f52061" start_index="0" end="217499e9-49e3-4c56-aa56-a84dbe0007d6" end_index="1" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="背景预览" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>
