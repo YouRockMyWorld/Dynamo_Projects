@@ -1,0 +1,96 @@
+<Workspace Version="0.9.1.4062" X="224.334334690318" Y="230.914491813622" zoom="0.294049439083158" Name="Home" Description="" RunType="Automatic" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap />
+  <Elements>
+    <PythonNodeModels.PythonNode guid="5ee859c9-758f-4687-89e5-c2b3334f4fef" type="PythonNodeModels.PythonNode" nickname="FileDatas" x="318.61922963447" y="176.169792982893" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" inputcount="1">
+      <Script>import clr
+clr.AddReference('ProtoGeometry')
+from Autodesk.DesignScript.Geometry import *
+#该节点的输入内容将存储为 IN 变量中的一个列表。
+dataEnteringNode = IN
+txtFile = IN[0]
+numList = []
+txt = ''
+with open(txtFile,'r') as f:
+    txt = f.readlines()
+for s in txt:
+    if s.strip() != '':
+        numList.append(float(s.strip()))
+#将输出内容指定给 OUT 变量。
+OUT = numList</Script>
+    </PythonNodeModels.PythonNode>
+    <CoreNodeModels.Input.Filename guid="ea4afba0-d158-4b28-9c92-11b588b1a9f4" type="CoreNodeModels.Input.Filename" nickname="txt文件路径" x="-92.1969037852914" y="179.225912859563" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <System.String>C:\Users\Administrator\Desktop\jiaodu.txt</System.String>
+    </CoreNodeModels.Input.Filename>
+    <Dynamo.Nodes.DSModelElementsSelection guid="80fe74db-c586-464a-99f2-02554034cb69" type="Dynamo.Nodes.DSModelElementsSelection" nickname="选择管片" x="-84.2671958541555" y="-67.6824618074853" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074145" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074153" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074161" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-0007416f" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-0007417d" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-0007418b" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074199" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000741a7" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000741b5" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000741c3" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000741d1" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000741df" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000741ed" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000741fb" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074209" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074217" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074225" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074233" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074241" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-0007424f" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-0007425d" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-0007426b" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074278" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074286" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074294" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000742a2" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000742b0" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000742be" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000742cc" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000742d9" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000742e7" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000742f5" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074303" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074311" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-0007431f" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-0007432d" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-0007433b" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074349" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074357" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074365" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074373" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-00074381" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-0007438f" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-0007439d" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000743ab" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000743b9" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000743c7" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000743d5" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000743e3" />
+      <instance id="95e048b0-14b2-42f9-a522-163587fdaab8-000743f1" />
+    </Dynamo.Nodes.DSModelElementsSelection>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="854458b0-f915-451b-8197-4883f9d2ff4e" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Element.SetParameterByName" x="820.434210862071" y="-78.5638849598446" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" assembly="RevitNodes.dll" function="Revit.Elements.Element.SetParameterByName@string,var" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="1b7b6427-e7fa-4a12-a7f6-f92aa9ad05be" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="341.432565276933" y="23.7794892867291" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="&quot;角度&quot;;" ShouldFocus="false" />
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="5ee859c9-758f-4687-89e5-c2b3334f4fef" start_index="0" end="854458b0-f915-451b-8197-4883f9d2ff4e" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="ea4afba0-d158-4b28-9c92-11b588b1a9f4" start_index="0" end="5ee859c9-758f-4687-89e5-c2b3334f4fef" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="80fe74db-c586-464a-99f2-02554034cb69" start_index="0" end="854458b0-f915-451b-8197-4883f9d2ff4e" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="1b7b6427-e7fa-4a12-a7f6-f92aa9ad05be" start_index="0" end="854458b0-f915-451b-8197-4883f9d2ff4e" end_index="1" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="c02e40ad-09e4-4c6d-8128-46bb8c227ac2" annotationText="输入" left="-102.196903785291" top="-97.6824618074853" width="296.929707931136" height="372.908374667048" fontSize="14" InitialTop="-67.6824618074853" InitialHeight="372.908374667048" TextblockHeight="20" backgrouund="#FFC1D676">
+      <Models ModelGuid="ea4afba0-d158-4b28-9c92-11b588b1a9f4" />
+      <Models ModelGuid="80fe74db-c586-464a-99f2-02554034cb69" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+  </Annotations>
+  <Presets />
+  <Cameras>
+    <Camera Name="背景预览" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>
